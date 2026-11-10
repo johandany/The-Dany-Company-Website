@@ -17,6 +17,21 @@
   <body class="bg-[#f9f9f7] text-[#1a1c1b] antialiased selection:bg-[#fedeb2] selection:text-[#0b192c]">
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-  </body>
+ <script>
+        // Selects common icon elements
+        const webIcons = document.querySelectorAll('.icon, i, svg, img[src*="icon"]');
+
+        webIcons.forEach(icon => {
+            icon.addEventListener('click', (event) => {
+                // Example interactive response: Add a bounce animation class
+                icon.style.transform = "scale(0.8)";
+                setTimeout(() => icon.style.transform = "scale(1)", 150);
+                
+                console.log("Icon clicked:", event.target);
+                // You can add custom code here (e.g., opening modals or triggering sounds)
+            });
+        });
+    </script>
+</body>
 </html>
 
